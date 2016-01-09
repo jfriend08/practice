@@ -3,6 +3,7 @@ Check whether a binary tree is a full binary tree or not
 A full binary tree is defined as a binary tree in which all nodes have either zero or two child nodes.
 Conversely, there is no node in a full binary tree, which has one child node. More information about full binary trees can be found here.
 '''
+
 from Node import Node
 def isFullBTree(root):
   if root == None:
