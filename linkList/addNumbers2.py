@@ -62,10 +62,10 @@ n1, n2, n3 = ListNode(5), ListNode(6), ListNode(3)
 n1.next = n2
 n2.next = n3
 
-N1, N2, N3, N4 = ListNode(9), ListNode(5), ListNode(2), ListNode(2)
+N1, N2, N3, N4 = ListNode(8), ListNode(4), ListNode(2), ListNode(2)
 N1.next = N2
 N2.next = N3
-N3.next = N4
+# N3.next = N4
 pn.printNode(addNumbers(n1, N1))
 
 
