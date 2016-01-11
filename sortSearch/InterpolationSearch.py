@@ -9,7 +9,6 @@ def IerpSearch(arr, target):
       return -1
 
     m = low + (target - arr[low]) * ( (high-low)/(arr[high]-arr[low]) )
-    print low, m, high
     if target == arr[m]:
       return m
     elif target > arr[m]:
