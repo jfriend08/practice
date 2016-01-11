@@ -10,7 +10,7 @@ def partition(arr, start, end):
   idx_piviot, pVal = start, arr[start]
   arr[idx_piviot], arr[end] = arr[end], arr[idx_piviot]
   for i in xrange(start, end):
-    if arr[i] <= pVal:
+    if arr[i] < pVal:
       arr[i], arr[idx_piviot] = arr[idx_piviot], arr[i]
       idx_piviot += 1
   arr[end], arr[idx_piviot] = arr[idx_piviot], arr[end]
