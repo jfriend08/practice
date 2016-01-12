@@ -52,6 +52,6 @@ def convert2ZigZag2(arr):
 arr = [4,3,7,8,6,2,1]
 print convert2ZigZag2(arr)
 
-arr = [10,3,4,16,20,12]
+arr = [1,4,4,4,2]
 # print convert2ZigZag2(arr)
 convert2ZigZag1(arr)
