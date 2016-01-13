@@ -23,18 +23,14 @@ Minimum length subarray is {100, 1, 0, 200}
 import sys
 def getMinLength(arr, target):
   minLen, mysum = sys.maxint, 0
-  left, right = 0, 0
+  for i in xrange(len(arr)):
+    mysum = 0
+    for j in xrange(i, len(arr)):
+      mysum += arr[j]
+      if mysum > target:
+        minLen = min(minLen, j-i+1)
+        break
 
-  while right < len(arr):
-    if mysum <= target:
-      mysum += arr[right]
-      right += 1
-
-    elif mysum > target:
-      while left <= right and mysum > target:
-        minLen = min(minLen, right - left + 1)
-        mysum -= arr[left]
-        left +=1
   return minLen
 
 arr = [1,4,45,6,0,19]
@@ -44,4 +40,4 @@ arr= [1, 10, 5, 2, 7]
 print getMinLength(arr,9)
 
 arr = [1, 11, 100, 1, 0, 200, 3, 2, 1, 250]
-print getMinLength(arr, 249)
+print getMinLength(arr, 201)
