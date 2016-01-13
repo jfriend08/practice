@@ -20,6 +20,6 @@ def LIS(arr):
 
   return max(table)
 
-arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]
+arr = [10]
 print LIS(arr)
 
