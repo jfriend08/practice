@@ -20,7 +20,7 @@ def printT(t):
   for elm in t:
     print elm
 
-#Important. DP method to find different sums from all possible subsets
+#Important. DP method to find different sums from all possible subsetsg
 def findTable(nums):
   total = sum(nums)
   t = [ [False] * (total+1) for _ in xrange(len(nums))]
