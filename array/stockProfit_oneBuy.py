@@ -18,5 +18,5 @@ def maxProfit_oneBuy(arr):
 arr = [2,3,10,6,4,8,1]
 print maxProfit_oneBuy(arr)
 
-arr = [7,9,5,6,3,2]
-print maxProfit_oneBuy(arrs)
+arr = [7,9,5,6,3,2,100]
+print maxProfit_oneBuy(arr)
