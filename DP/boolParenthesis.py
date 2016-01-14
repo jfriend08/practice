@@ -59,7 +59,7 @@ def numofTrue(syms, opers):
         elif opers[k] == "^":
           T[i][j] += F[i][k]*T[k+1][j] + T[i][k]*F[k+1][j]
           F[i][j] += T[i][k]*T[k+1][j] + F[i][k]*T[k+1][j]
-  print T
+  print Tg
   return T[0][len(syms)-1]
 
 syms = "TTFT"
