@@ -37,23 +37,33 @@ and (T|((T&F)^T)).
 '''
 
 def numofTrue(syms, opers):
-  T = [[None] * (len(syms)-1) for _ in xrange(len(syms))]
+  T = [[None] * len(syms) for _ in xrange(len(syms))]
+  F = [[None] * len(syms) for _ in xrange(len(syms))]
 
   for i in xrange(len(syms)):
     T[i][i] = (1 if syms[i]=="T" else 0)
+    F[i][i] = (1 if syms[i]=="F" else 0)
 
   for gap in xrange(1,len(syms)):
-    for i in xrange(len(syms)):
+    for i in xrange(len(syms)-gap):
       j = i + gap
-      T[i][j] = 0
+      T[i][j], F[i][j] = 0, 0
       for k in xrange(i,j):
+        tik, tkj = T[i][k] + F[i][k], T[k+1][j] + F[k+1][j]
         if opers[k] == "&":
           T[i][j] += T[i][k] * T[k+1][j]
+          F[i][j] += (tik*tkj - T[i][k]*T[k+1][j])
         elif opers[k] == "|":
-          T[i][j] += 
-          pass
+          T[i][j] += F[i][k]*F[k+1][j]
+          F[i][j] += tik*tkj - F[i][k]*F[k+1][j]
         elif opers[k] == "^":
-          pass
+          T[i][j] += F[i][k]*T[k+1][j] + T[i][k]*F[k+1][j]
+          F[i][j] += T[i][k]*T[k+1][j] + F[i][k]*T[k+1][j]
+  print T
+  return T[0][len(syms)-1]
 
+syms = "TTFT"
+opers = "|&^"
+print numofTrue(syms,opers)
 
 
