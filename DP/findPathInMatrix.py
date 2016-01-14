@@ -40,7 +40,7 @@ def findMaxLengPath(m):
       else:
         dist = maxLengMap[(i,j)]
       maxLeng = max(maxLeng, dist)
-
+  print maxLengMap
   return maxLeng
 
 m = [[1,2,9],[5,3,8],[4,6,7]]
