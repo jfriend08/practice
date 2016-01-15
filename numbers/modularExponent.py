@@ -17,7 +17,7 @@ def getModule(x,y,p):
     if y & 1:
       res = (res*x)%p
     # y most be even now
-    y = y>>1 #y/2
+    y = y>>1 #y/2g
     x = (x*x)%p
   return res
 
