@@ -13,11 +13,13 @@ def getModule(x,y,p):
   x, res = x%p, 1
 
   while y > 0:
-    if y == 1:
+    # if y is odd, multiply x with result
+    if y & 1:
       res = (res*x)%p
-    y = y>>1
+    # y most be even now
+    y = y>>1 #y/2
     x = (x*x)%p
   return res
 
 
-print getModule(4,1,5)
+print getModule(2,5,13)
