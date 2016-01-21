@@ -37,7 +37,8 @@ def multiPackUpdate(v, w, m, Target, arr, V, W):
     while k < m:
       zeroOneUpdate(k*v, k*w, arr, Target)
       m = m - k
-      k = 2*k
+      k = 2 * k
+    zeroOneUpdate(m*v, m*w, arr, Target)
 
 def multiPack(V, W, M, Target):
   arr = [0] * (Target+1)
