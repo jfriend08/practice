@@ -16,9 +16,8 @@ def LIS(arr):
     for j in xrange(0,i):
       if arr[j] <= arr[i] and table[i] < table[j]+1:
         table[i] = table[j]+1
-
-
   return max(table)
+
 
 arr = [10]
 print LIS(arr)
